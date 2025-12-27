@@ -1,4 +1,12 @@
 package org.example.demoescqrsaxon.commonapi.events;
 
-public class BaseEvent {
+import lombok.Getter;
+
+public abstract class BaseEvent<T> {
+    @Getter
+    private T id;
+
+    public BaseEvent(T id) {
+        this.id = id;
+    }
 }
